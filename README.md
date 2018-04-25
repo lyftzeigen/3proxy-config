@@ -8,10 +8,14 @@ docker pull qautomatron/docker-3proxy:latest
 
 ### 2. Для запуска контейнера с данными настройками
 ```bash
-docker run --name='3proxy' --restart=always -d -v $(pwd)/3proxy.cfg:/etc/3proxy/3proxy:ro -p 8080:8080 qautomatron/docker-3proxy:latest
+docker run --name='3proxy' --restart=always -d -v $(pwd)/3proxy.cfg:/etc/3proxy/3proxy.cfg:ro -p 8080:8080 qautomatron/docker-3proxy:latest
 ```
 
 ### 3. Добавить пользователя можно в файл конфигурации
 ```bash
 users username:CL:password
+```
+и перезапустить контейнер
+```bash
+docker restart 3proxy
 ```
